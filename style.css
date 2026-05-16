@@ -1,41 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #dcdcdc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.task-list-container {
+    width: 500px;
+
+    background: #f5f5ff;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.task-list-title {
+    text-align: center;
+
+    color: green;
+
+    margin-bottom: 25px;
+
+    font-size: 42px;
+}
+
+.task-input {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+#task-input {
+    flex: 1;
+
+    padding: 12px;
+
+    border: 2px solid green;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+}
+
+#task-add-btn {
+    background: green;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+#task-add-btn:hover {
+    background: darkgreen;
+}
+
+.task-list-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 5px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.task-list-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+
+    accent-color: green;
+}
+
+.task-text {
+    flex: 1;
+
+    font-size: 20px;
+
+    color: green;
+}
+
+.task-list-item input:checked ~ .task-text {
+    text-decoration: line-through;
+
+    color: #9acd32;
+}
+
 .task-done-btn,
 .task-delete-btn {
-    padding: 5px 9px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
     color: white;
+
+    padding: 6px 10px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
     font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s;
 }
 
 .task-done-btn {
-    margin-left: auto;
     background: green;
 }
 
 .task-delete-btn {
     background: red;
-}
-
-.task-list-item:hover .task-done-btn,
-.task-list-item:hover .task-delete-btn {
-    opacity: 1;
-}
-
-.task-text {
-    flex: 1;
-    padding: 4px;
-}
-
-.task-text:focus {
-    outline: 2px solid gray;
-    border-radius: 4px;
-    background: ghostwhite;
-}
-
-.task-list-item input:checked ~ .task-text {
-    text-decoration: line-through;
-    color: #9acd32;
 }
